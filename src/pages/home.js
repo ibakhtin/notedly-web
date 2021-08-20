@@ -1,13 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
-import Header from "../components/Header";
-import Navigation from "../components/Navigation";
 
 const Home = () => (
     <div>
-        <Header/>
-        <Navigation/>
         <p>This is Home page.</p>
     </div>
 );
