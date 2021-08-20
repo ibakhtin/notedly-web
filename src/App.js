@@ -1,11 +1,11 @@
 import React from "react";
 
+import Pages from "./pages";
+
 const App = () => (
   <div>
-    <h1>Hello Notedly!</h1>
-    <p>Welcome to the Notedly application</p>
+      <Pages />
   </div>
 );
-
 
 export default App;

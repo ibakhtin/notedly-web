@@ -8,8 +8,8 @@ const Pages = () => {
     return (
         <Router>
             <Route exact path="/" component={ Home }/>
-            <Route path="mynotes" component={ MyNotes }/>
-            <Route path="favorites" component={ Favorites }/>
+            <Route path="/mynotes" component={ MyNotes }/>
+            <Route path="/favorites" component={ Favorites }/>
         </Router>
     );
 };
