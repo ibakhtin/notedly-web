@@ -1,46 +1,44 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
-import Header from "./Header";
-import Navigation from "./Navigation";
+import Sidebar from './Sidebar'
 
 const Wrapper = styled.div`
+  background-color: #f4f6f8;
+
   @media (min-width: 700px) {
     display: flex;
-    top: 64px;
     position: relative;
-    height: calc(100% - 64px);
+    height: 100%;
     width: 100%;
     flex: auto;
     flex-direction: column;
   }
-`;
+`
 
 const Main = styled.main`
+  background-color: inherit;
   position: fixed;
   heght: calc(100% - 185px);
   width: 100%;
   padding: 1em;
   overflow-y: scroll;
-  
+
   @media (min-width: 700px) {
     flex: 1;
     margin-left: 220px;
-    height: calc(100% - 64px);
+    height: 100%;
     width: calc(100% - 220px);
   }
-`;
+`
 
 const Layout = ({ children }) => {
-    return (
-        <>
-            <Header/>
-            <Wrapper>
-                <Navigation/>
-                <Main>{ children }</Main>
-            </Wrapper>
-        </>
-    );
-};
+  return (
+    <Wrapper>
+      <Sidebar/>
+      <Main>{ children }</Main>
+    </Wrapper>
+  )
+}
 
-export default Layout;
+export default Layout

@@ -4,9 +4,7 @@ import Note from './Note'
 const NoteFeed = ({ notes }) => (
   <div>
     { notes.map(note => (
-      <div key={ note.id }>
-        <Note note={ note }/>
-      </div>
+        <Note key={ note.id } note={ note }/>
     )) }
   </div>
 )
