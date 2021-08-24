@@ -1,18 +1,44 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react'
+import { useQuery, gql } from '@apollo/client'
 
-import Button from "../components/Button";
+const GET_NOTES = gql`
+  query noteFeed($cursor: String) {
+    noteFeed(cursor: $cursor) {
+      cursor
+      hasNextPage
+      notes {
+        id
+        createdAt
+        content
+        favoriteCount
+        author {
+          username
+          id
+          avatar
+        }
+      }
+    }
+  }
+`
 
 const Home = () => {
-    useEffect(() => {
-        document.title = "Home — Notedly";
-    });
+  useEffect(() => {
+    document.title = 'Home — Notedly'
+  })
 
-    return (
-        <div>
-            <p>This is Home page.</p>
-            <Button>Click me!</Button>
-        </div>
-    );
-};
+  const { data, loading, error } = useQuery(GET_NOTES)
 
-export default Home;
+  if (loading) return <p>Loading...</p>
+
+  if (error) return <p>Error...</p>
+
+  return (
+    <div>
+      {data.noteFeed.notes.map(note => (
+        <div key={note.id}>{note.content} by {note.author.username}</div>
+      ))}
+    </div>
+  )
+}
+
+export default Home

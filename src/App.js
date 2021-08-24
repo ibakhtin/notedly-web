@@ -1,14 +1,23 @@
-import React from "react";
+import React from 'react'
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
 
-import GlobalStyles from "./components/GlobalStyles";
+import GlobalStyles from './components/GlobalStyles'
+import Pages from './pages'
 
-import Pages from "./pages";
+const uri = process.env.REACT_APP_API_URI
+const cache = new InMemoryCache()
+
+const client = new ApolloClient({
+    uri,
+    cache,
+    connectToDevTools: true
+})
 
 const App = () => (
-  <div>
-      <GlobalStyles />
-      <Pages />
-  </div>
-);
+    <ApolloProvider client={client}>
+        <GlobalStyles/>
+        <Pages/>
+    </ApolloProvider>
+)
 
-export default App;
+export default App
