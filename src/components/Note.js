@@ -4,13 +4,13 @@ import { format } from 'date-fns'
 import styled from 'styled-components'
 
 const StyledNote = styled.article`
-  background-color: #fff;
-  color: #444;
+  background-color: #fcfcfc;
+  color: #333;
   max-width: 800px;
   margin: 1.5em;
-  padding: 2em 2em 1em;
-  border-radius: 1em;
-  box-shadow: 0 0 1.5em rgba(0, 0, 0, 0.025);
+  padding: 2em 2.25em 1em;
+  border-radius: 1.75em;
+  box-shadow: 0 0 1.5em rgba(0, 0, 0, 0.05);
 `
 
 const MetaData = styled.div`
