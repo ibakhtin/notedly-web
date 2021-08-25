@@ -44,9 +44,9 @@ const NavList = styled.ul`
   }
 `
 
-const NavListItem = ({to, children}) => (
+const NavListItem = ({ to, children }) => (
   <li>
-    <Link to={to }>{children}</Link>
+    <Link to={ to }>{ children }</Link>
   </li>
 )
 
@@ -55,9 +55,9 @@ const Sidebar = () => {
     <Nav>
       <Brand>Notedly</Brand>
       <NavList>
-          <NavListItem to="/">Home</NavListItem>
-          <NavListItem to="/mynotes">My Notes</NavListItem>
-          <NavListItem to="/favorites">Favorites</NavListItem>
+        <NavListItem to="/">Home</NavListItem>
+        <NavListItem to="/mynotes">My Notes</NavListItem>
+        <NavListItem to="/favorites">Favorites</NavListItem>
       </NavList>
     </Nav>
   )
