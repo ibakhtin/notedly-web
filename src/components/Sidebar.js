@@ -2,6 +2,13 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
+const Brand = styled.h1`
+  font-size: 1.5em;
+  padding: 0;
+  margin: 0 0 1em;
+  color: #333;
+`
+
 const Nav = styled.nav`
   padding: 2em;
   background-color: inherit;
@@ -37,19 +44,20 @@ const NavList = styled.ul`
   }
 `
 
+const NavListItem = ({to, children}) => (
+  <li>
+    <Link to={to }>{children}</Link>
+  </li>
+)
+
 const Sidebar = () => {
   return (
     <Nav>
+      <Brand>Notedly</Brand>
       <NavList>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/mynotes">My Notes</Link>
-        </li>
-        <li>
-          <Link to="/favorites">Favorites</Link>
-        </li>
+          <NavListItem to="/">Home</NavListItem>
+          <NavListItem to="/mynotes">My Notes</NavListItem>
+          <NavListItem to="/favorites">Favorites</NavListItem>
       </NavList>
     </Nav>
   )
