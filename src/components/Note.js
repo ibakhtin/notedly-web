@@ -9,7 +9,7 @@ const StyledNote = styled.article`
   max-width: 800px;
   margin: 1.5em;
   padding: 2em 2.25em 1em;
-  border-radius: 1.75em;
+  border-radius: 1.25em;
   box-shadow: 0 0 1.5em rgba(0, 0, 0, 0.05);
 `
 

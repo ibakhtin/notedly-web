@@ -16,7 +16,9 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Adobe Clean", "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    //font-family: -apple-system_, BlinkMacSystemFont_, "Adobe Clean", "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-family: 'Adobe Clean', 'Segoe UI', sans-serif;
+    font-size: 18px;
     background-color: #fff;
     line-height: 1.4;
   }
