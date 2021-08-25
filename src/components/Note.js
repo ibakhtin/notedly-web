@@ -3,7 +3,7 @@ import ReactMarkdown from 'react-markdown'
 import { format } from 'date-fns'
 import styled from 'styled-components'
 
-const StyledNote = styled.article`
+const NoteBox = styled.article`
   background-color: #fcfcfc;
   color: #333;
   max-width: 800px;
@@ -33,7 +33,7 @@ const Avatar = styled.img`
 `
 
 const Note = ({ note }) => (
-  <StyledNote>
+  <NoteBox>
     <MetaData>
       <MetaInfo>
         <Avatar
@@ -51,7 +51,7 @@ const Note = ({ note }) => (
       </UserAction>
     </MetaData>
     <ReactMarkdown>{ note.content }</ReactMarkdown>
-  </StyledNote>
+  </NoteBox>
 )
 
 export default Note
