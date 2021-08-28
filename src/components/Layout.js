@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import Sidebar from './Sidebar'
 
 const Wrapper = styled.div`
-  background-color: #f4f6f8;
+  background-color: #f5f5f5;
 
   @media (min-width: 700px) {
     display: flex;

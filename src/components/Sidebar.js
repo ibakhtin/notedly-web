@@ -4,9 +4,7 @@ import styled from 'styled-components'
 
 const Brand = styled.h1`
   font-size: 1.5em;
-  padding: 0;
   margin: 0 0 1em;
-  color: #333;
 `
 
 const Nav = styled.nav`
@@ -29,8 +27,6 @@ const NavList = styled.ul`
 
   a {
     text-decoration: none;
-    font-weight: bold;
-    font-size: 1.2em;
     color: #444;
   }
 
@@ -58,6 +54,7 @@ const Sidebar = () => {
         <NavListItem to="/">Home</NavListItem>
         <NavListItem to="/mynotes">My Notes</NavListItem>
         <NavListItem to="/favorites">Favorites</NavListItem>
+        <NavListItem to="/signup">Sign Up</NavListItem>
       </NavList>
     </Nav>
   )

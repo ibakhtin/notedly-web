@@ -7,13 +7,17 @@ const outline = css`
   &:hover {
     color: #fcfcfc;
     background-color: #666;
+    border-color: #666;
   }
 `
 
 const round = css`
   padding: 4px 18px 6px;
-  border-radius: 500px;
+  border-radius: 9999px;
 `
+
+// TODO: Add danger and quiet buttons
+
 
 const Button = styled.button`
   padding: 4px 14px 6px;
@@ -22,10 +26,12 @@ const Button = styled.button`
   border-radius: 6px;
   color: #fcfcfc;
   background-color: #666;
+  outline: none;
   cursor: pointer;
   
-  :hover {
+  :hover, :focus {
     background-color: #555;
+    border-color: #555;
   }
   
   ${props => props.outline && outline}

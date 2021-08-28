@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { normalize } from "normalize.css";
+import normalize from 'normalize.css'
 
 const GlobalStyles = createGlobalStyle`
   ${ normalize }
@@ -16,9 +16,9 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    //font-family: -apple-system_, BlinkMacSystemFont_, "Adobe Clean", "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     font-family: 'Adobe Clean', 'Segoe UI', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
+    color: #333;
     background-color: #fff;
     line-height: 1.4;
   }
