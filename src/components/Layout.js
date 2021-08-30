@@ -8,18 +8,17 @@ const Wrapper = styled.div`
 
   @media (min-width: 700px) {
     display: flex;
+    flex-direction: column;
     position: relative;
     height: 100%;
     width: 100%;
     flex: auto;
-    flex-direction: column;
   }
 `
 
 const Main = styled.main`
   background-color: inherit;
   position: fixed;
-  heght: calc(100% - 185px);
   width: 100%;
   padding: 1em;
   overflow-y: scroll;

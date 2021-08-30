@@ -7,10 +7,9 @@ const NoteBox = styled.article`
   background-color: #fcfcfc;
   color: #333;
   max-width: 800px;
-  margin: 1.5em;
-  padding: 2em 2.25em 1em;
+  margin: 1em;
+  padding: 1.75em 1.75em 0.75em;
   border-radius: 1em;
-  box-shadow: 0 0 1em rgba(0, 0, 0, 0.025);
 `
 
 const MetaData = styled.div`
