@@ -4,6 +4,7 @@ import { useMutation, useApolloClient, gql } from '@apollo/client'
 
 import Button from '../components/Button'
 import Input from '../components/Input'
+import { isLoggedIn } from '../graphql/query'
 
 const Wrapper = styled.div`
   border: 1px solid #f5f4f0;
@@ -44,16 +45,10 @@ const SignUp = (props) => {
     }
   `
 
-  const IS_LOGGED_IN = gql`
-    query IsUserLoggedIn {
-      isLoggedIn @client
-    }
-  `
-
   const [signUp, { loading, error }] = useMutation(SIGNUP_USER, {
     onCompleted: data => {
       localStorage.setItem('Token', data.signUp)
-      client.writeQuery({ query: IS_LOGGED_IN, data: { isLoggedIn: true } })
+      client.writeQuery({ query: isLoggedIn, data: { isLoggedIn: true } })
       props.history.push('/')
     }
   })

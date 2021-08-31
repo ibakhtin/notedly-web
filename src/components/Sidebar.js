@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { useQuery, gql } from '@apollo/client'
 
+import { isLoggedIn } from '../graphql/query'
+import SignOut from './SignOut'
 
 const Brand = styled.h1`
   font-size: 1.5em;
@@ -41,12 +43,6 @@ const NavList = styled.ul`
     color: #000;
   }
 `
-const IS_LOGGED_IN = gql`
-  query IsUserLoggedIn {
-    isLoggedIn @client
-  }
-`
-
 const NavListItem = ({ to, children }) => (
   <li>
     <Link to={to}>{children}</Link>
@@ -54,7 +50,7 @@ const NavListItem = ({ to, children }) => (
 )
 
 const Sidebar = () => {
-  const { data } = useQuery(IS_LOGGED_IN)
+  const { data } = useQuery(isLoggedIn)
 
   return (
     <Nav>
@@ -65,9 +61,9 @@ const Sidebar = () => {
         <NavListItem to="/favorites">Favorites</NavListItem>
       </NavList>
       {data.isLoggedIn ? (
-        <p>Log Out</p>
+        <SignOut/>
       ) : (
-        <NavListItem to="/signup">Sign Up</NavListItem>
+        <Link to="/signup">Sign Up</Link>
       )}
     </Nav>
   )
