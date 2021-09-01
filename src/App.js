@@ -9,7 +9,7 @@ import { setContext } from '@apollo/client/link/context'
 
 import GlobalStyles from './components/GlobalStyles'
 import Pages from './pages'
-import { isLoggedIn } from './graphql/query'
+import { IS_LOGGED_IN } from './graphql/query'
 
 const uri = process.env.REACT_APP_API_URI
 const httpLink = createHttpLink({ uri })
@@ -32,7 +32,7 @@ const client = new ApolloClient({
 })
 
 cache.writeQuery({
-  query: isLoggedIn,
+  query: IS_LOGGED_IN,
   data: {
     isLoggedIn: !!localStorage.getItem('Token')
   }
@@ -40,7 +40,7 @@ cache.writeQuery({
 
 client.onResetStore(
   () => cache.writeQuery({
-    query: isLoggedIn,
+    query: IS_LOGGED_IN,
     data: {
       isLoggedIn: !!localStorage.getItem('Token')
     }
