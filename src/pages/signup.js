@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import { useMutation, useApolloClient, gql } from '@apollo/client'
+import { useMutation, useApolloClient } from '@apollo/client'
 
 import Button from '../components/Button'
 import Input from '../components/Input'
-import { isLoggedIn } from '../graphql/query'
+import { IS_LOGGED_IN } from '../graphql/query'
+import { SIGNUP_USER } from '../graphql/mutation'
 
 const Wrapper = styled.div`
   max-width: 500px;
@@ -28,16 +29,10 @@ const SignUp = (props) => {
 
   const client = useApolloClient()
 
-  const SIGNUP_USER = gql`
-    mutation signUp($email: String!, $username: String!, $password: String!) {
-      signUp(email: $email, username: $username, password: $password)
-    }
-  `
-
   const [signUp, { loading, error }] = useMutation(SIGNUP_USER, {
     onCompleted: data => {
       localStorage.setItem('Token', data.signUp)
-      client.writeQuery({ query: isLoggedIn, data: { isLoggedIn: true } })
+      client.writeQuery({ query: IS_LOGGED_IN, data: { isLoggedIn: true } })
       props.history.push('/')
     }
   })
@@ -59,7 +54,6 @@ const SignUp = (props) => {
     <Wrapper>
       <h2>Sign Up</h2>
       <Form onSubmit={onSubmit}>
-        {/*<label htmlFor="username">Username:</label>*/}
         <Input
           label="Username:"
           required
