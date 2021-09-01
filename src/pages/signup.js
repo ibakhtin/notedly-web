@@ -7,23 +7,12 @@ import Input from '../components/Input'
 import { isLoggedIn } from '../graphql/query'
 
 const Wrapper = styled.div`
-  border: 1px solid #f5f4f0;
   max-width: 500px;
   padding: 1em;
   margin: 0 auto;
 `
 
 const Form = styled.form`
-  label,
-  input {
-    display: block;
-  }
-
-  label {
-    font-size: 14px;
-    margin-bottom: 0.33em;
-  }
-
   input {
     margin-bottom: 1em;
   }
@@ -60,7 +49,7 @@ const SignUp = (props) => {
     })
   }
 
-  const onSubmit = (event) => {
+  const onSubmit = event => {
     event.preventDefault()
     signUp({ variables: { ...values } })
     setValues({ username: '', email: '', password: '' })
@@ -70,8 +59,9 @@ const SignUp = (props) => {
     <Wrapper>
       <h2>Sign Up</h2>
       <Form onSubmit={onSubmit}>
-        <label htmlFor="username">Username:</label>
+        {/*<label htmlFor="username">Username:</label>*/}
         <Input
+          label="Username:"
           required
           value={values.username}
           type="text"
@@ -80,8 +70,8 @@ const SignUp = (props) => {
           placeholder="Username"
           onChange={onChange}
         />
-        <label htmlFor="email">Email:</label>
         <Input
+          label="Email:"
           required
           value={values.email}
           type="email"
@@ -90,8 +80,8 @@ const SignUp = (props) => {
           placeholder="Email"
           onChange={onChange}
         />
-        <label htmlFor="password">Password:</label>
         <Input
+          label="Password:"
           required
           value={values.password}
           type="password"

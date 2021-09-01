@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
-const Input = styled.input`
+const StyledInput = styled.input`
+  display: block;
   line-height: 2em;
   width: 100%;
   padding-left: 0.5em;
@@ -13,5 +14,18 @@ const Input = styled.input`
     border: 1px solid #bbb;
   }
 `
+
+const StyledLabel = styled.label`
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+`
+
+const Input = (props) => (
+  <>
+    <StyledLabel>{props.label}</StyledLabel>
+    <StyledInput {...props} />
+  </>
+)
 
 export default Input
