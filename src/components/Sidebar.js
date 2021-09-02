@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import { useQuery, gql } from '@apollo/client'
+import { useQuery } from '@apollo/client'
 
-import { isLoggedIn } from '../graphql/query'
+import { IS_LOGGED_IN } from '../graphql/query'
 import SignOut from './SignOut'
 
 const Brand = styled.h1`
@@ -50,7 +50,7 @@ const NavListItem = ({ to, children }) => (
 )
 
 const Sidebar = () => {
-  const { data } = useQuery(isLoggedIn)
+  const { data } = useQuery(IS_LOGGED_IN)
 
   return (
     <Nav>
@@ -63,7 +63,11 @@ const Sidebar = () => {
       {data.isLoggedIn ? (
         <SignOut/>
       ) : (
-        <Link to="/signup">Sign Up</Link>
+        <>
+          <Link to="/signin">Sign In</Link>
+          <br/>
+          <Link to="/signup">Sign Up</Link>
+        </>
       )}
     </Nav>
   )

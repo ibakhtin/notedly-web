@@ -2,16 +2,16 @@ import React from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import { useQuery } from '@apollo/client'
 
-import { isLoggedIn } from '../graphql/query'
+import { IS_LOGGED_IN } from '../graphql/query'
 
 
 const SignOut = (props) => {
-  const { data, client } = useQuery(isLoggedIn)
+  const { data, client } = useQuery(IS_LOGGED_IN)
 
   const onClick = () => {
     localStorage.removeItem('Token')
     client.resetStore()
-    client.writeQuery({ query: isLoggedIn, data: { isLoggedIn: false } })
+    client.writeQuery({ query: IS_LOGGED_IN, data: { isLoggedIn: false } })
     console.log(data)
     props.history.push('/')
   }

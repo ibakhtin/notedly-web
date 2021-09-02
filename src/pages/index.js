@@ -5,8 +5,8 @@ import Home from './home'
 import MyNotes from './mynotes'
 import Favorites from './favorites'
 import NotePage from './note'
-import SignIn from './signin'
-import SignUp from './signup'
+import SignIn from '../components/SignIn'
+import SignUp from '../components/SignUp'
 
 import Layout from '../components/Layout'
 

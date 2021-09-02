@@ -2,7 +2,7 @@ import React from 'react'
 import {
   ApolloClient,
   ApolloProvider,
-  createHttpLink, gql,
+  createHttpLink,
   InMemoryCache
 } from '@apollo/client'
 import { setContext } from '@apollo/client/link/context'
