@@ -16,8 +16,8 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    font-family: 'Adobe Clean', 'Segoe UI', sans-serif;
-    font-size: 16px;
+    font-family: '_Adobe Clean', 'Segoe UI', sans-serif;
+    font-size: 14px;
     color: #333;
     background-color: #fff;
     line-height: 1.4;

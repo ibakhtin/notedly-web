@@ -1,18 +1,20 @@
 import styled, { css } from 'styled-components'
 
 const outline = css`
-  color: #666;
-  background-color: transparent;
+  color: #333;
+  background-color: #fff;
+  border-color: #ddd;
   
   &:hover {
-    color: #fcfcfc;
-    background-color: #666;
-    border-color: #666;
+    //color: #fcfcfc;
+    background-color: #fff;
+    border-color: #999;
   }
 `
 
 const round = css`
-  padding: 4px 18px 6px;
+  padding-left: 20px;
+  padding-right: 20px;
   border-radius: 9999px;
 `
 
@@ -20,14 +22,17 @@ const round = css`
 
 
 const Button = styled.button`
-  padding: 4px 14px 6px;
+  padding-left: 20px;
+  padding-right: 20px;
   min-width: 5em;
-  border: 2px solid #666;
+  border: 1px solid #666;
   border-radius: 6px;
-  color: #fcfcfc;
+  color: #fff;
   background-color: #666;
   outline: none;
   cursor: pointer;
+  font-size: 14px;
+  height: 32px;
   
   :hover, :focus {
     background-color: #555;
