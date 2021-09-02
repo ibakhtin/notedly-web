@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useMutation, useApolloClient } from '@apollo/client'
 
 import { IS_LOGGED_IN } from '../graphql/query'

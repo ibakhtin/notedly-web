@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useMutation, useApolloClient, gql, ApolloClient } from '@apollo/client'
+import { useMutation, useApolloClient } from '@apollo/client'
 
 import UserForm from './UserForm'
 
