@@ -4,6 +4,7 @@ import { useMutation, useApolloClient } from '@apollo/client'
 
 import Button from '../components/Button'
 import Input from '../components/Input'
+import Label from '../components/Label'
 import { IS_LOGGED_IN } from '../graphql/query'
 import { SIGNUP_USER } from '../graphql/mutation'
 
@@ -14,8 +15,18 @@ const Wrapper = styled.div`
 `
 
 const Form = styled.form`
+  input,
+  label {
+    display: block;
+  }
+  
   input {
+    width: 100%;
     margin-bottom: 1em;
+  }
+  
+  label {
+    margin-bottom: 0.33em;
   }
 `
 
@@ -54,28 +65,28 @@ const SignUp = (props) => {
     <Wrapper>
       <h2>Sign Up</h2>
       <Form onSubmit={onSubmit}>
+        <Label>Username:</Label>
         <Input
-          label="Username:"
           required
           value={values.username}
           type="text"
           id="username"
           name="username"
-          placeholder="Username"
+          _placeholder="Username"
           onChange={onChange}
         />
+        <Label>Email:</Label>
         <Input
-          label="Email:"
           required
           value={values.email}
           type="email"
           id="email"
           name="email"
-          placeholder="Email"
+          _placeholder="Email"
           onChange={onChange}
         />
+        <Label>Password:</Label>
         <Input
-          label="Password:"
           required
           value={values.password}
           type="password"
@@ -84,7 +95,7 @@ const SignUp = (props) => {
           placeholder="Password"
           onChange={onChange}
         />
-        <Button type="submit">Sign Up</Button>
+        <Button round outline type="submit">Sign Up</Button>
       </Form>
     </Wrapper>
   )
