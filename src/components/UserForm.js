@@ -23,6 +23,10 @@ const Form = styled.form`
   label {
     margin-bottom: 0.33em;
   }
+  
+  button {
+    margin-top: 0.5em;
+  }
 `
 
 const UserForm = props => {
