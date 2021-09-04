@@ -24,9 +24,9 @@ const SignIn = props => {
 
   return (
     <>
-      <UserForm action={signIn} formType="signin"/>
       {loading && <p>Loading...</p>}
       {error && <p>Error signing in!</p>}
+      <UserForm action={signIn} formType="signin"/>
     </>
   )
 }
