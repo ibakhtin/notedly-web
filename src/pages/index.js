@@ -11,6 +11,7 @@ import SignUp from '../components/SignUp'
 import Layout from '../components/Layout'
 
 import { IS_LOGGED_IN } from '../graphql/query'
+import NewNote from '../components/NewNote'
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   const { data, loading, error } = useQuery(IS_LOGGED_IN)
@@ -44,6 +45,7 @@ const Pages = () => {
         <Route path="/note/:id" component={NotePage}/>
         <Route path="/signin" component={SignIn}/>
         <Route path="/signup" component={SignUp}/>
+        <PrivateRoute path="/newnote" component={NewNote}/>
       </Layout>
     </Router>
   )
