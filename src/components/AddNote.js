@@ -5,8 +5,9 @@ import NoteForm from './NoteForm'
 import { Text } from '../ui'
 
 import { ADD_NOTE } from '../graphql/mutation'
+import { GET_NOTES } from '../graphql/query'
 
-const NewNote = props => {
+const AddNote = props => {
   useEffect(() => {
     document.title = 'New Note — Notedly'
   })
@@ -14,6 +15,7 @@ const NewNote = props => {
   const [addNote, { loading, error }] = useMutation(
     ADD_NOTE,
     {
+      refetchQueries: [{query: GET_NOTES}],
       onCompleted: data => props.history.push(`/note/${data.newNote.id}`)
     }
   )
@@ -25,4 +27,4 @@ const NewNote = props => {
   </>
 }
 
-export default NewNote
+export default AddNote

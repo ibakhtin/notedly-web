@@ -57,6 +57,7 @@ const Sidebar = () => {
       <Brand>Notedly</Brand>
       <NavList>
         <NavListItem to="/">Home</NavListItem>
+        <NavListItem to="/addnote">Add</NavListItem>
         <NavListItem to="/mynotes">My Notes</NavListItem>
         <NavListItem to="/favorites">Favorites</NavListItem>
       </NavList>

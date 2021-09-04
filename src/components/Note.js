@@ -4,7 +4,7 @@ import { format } from 'date-fns'
 import styled from 'styled-components'
 
 const NoteBox = styled.article`
-  background-color: #fcfcfc;
+  background-color: #fff;
   color: #333;
   max-width: 800px;
   margin: 1em;
